@@ -56,27 +56,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.altitudeLabel.text = "\(userLocation.altitude)"
         
-        CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) in
+        CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) -> Void in
             
             if (error != nil) {
                 
                 print(error)
                 
-                
             } else {
                 
-                if let p = CLPlacemark(placemark: placemarks![0] as! CLPlacemark) {
+                if let p = placemarks?[0] {
                     
-                    print(p)
+                    var subThoroughfare:String = ""
+                    
+                    if (p.subThoroughfare != nil) {
+                        
+                        subThoroughfare = p.subThoroughfare!
+                        
+                    }
+                
+                    self.addressLabel.text = "\(subThoroughfare) \(p.thoroughfare) \n \(p.subLocality) \n \(p.subAdministrativeArea) \n \(p.postalCode) \n \(p.country)"
+                    
                 }
+                
                 
             }
             
-            
         })
-
         
     }
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

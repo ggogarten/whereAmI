@@ -126,6 +126,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Lw-s4-nBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="1g7-ii-tE5"/>
+                            <constraint firstItem="0Lw-s4-nBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3MW-Qr-ZxU"/>
                             <constraint firstItem="tpW-Zu-ZFn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="103" id="46k-uR-odc"/>
                             <constraint firstItem="Xs8-qQ-9cK" firstAttribute="leading" secondItem="geO-n7-H1k" secondAttribute="trailing" constant="39" id="641-uj-sDS"/>
                             <constraint firstItem="1BN-t4-IRY" firstAttribute="top" secondItem="iWR-Ie-HFE" secondAttribute="bottom" constant="40" id="6Ak-GX-c0a"/>
@@ -158,6 +159,12 @@
                             <constraint firstItem="1BN-t4-IRY" firstAttribute="leading" secondItem="K85-Ko-yRR" secondAttribute="trailing" constant="39" id="zMN-Md-VzT"/>
                             <constraint firstItem="tpW-Zu-ZFn" firstAttribute="top" secondItem="geO-n7-H1k" secondAttribute="bottom" constant="32" id="zSI-pd-Fp8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cTa-eK-UDS"/>
+                                <exclude reference="nNF-bz-3lm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="iDS-SP-UtU" id="fuw-W3-Vti"/>
