@@ -46,38 +46,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         var userLocation:CLLocation = locations[0]
         
-            self.latitudeLabel.text = "\(userLocation.coordinate.latitude)"
+        self.latitudeLabel.text = "\(userLocation.coordinate.latitude)"
         
-            self.longitudeLabel.text = "\(userLocation.coordinate.longitude)"
+        self.longitudeLabel.text = "\(userLocation.coordinate.longitude)"
         
-            self.courseLabel.text = "\(userLocation.course)"
+        self.courseLabel.text = "\(userLocation.course)"
         
-            self.speedLabel.text = "\(userLocation.speed)"
+        self.speedLabel.text = "\(userLocation.speed)"
         
-            self.altitudeLabel.text = "\(userLocation.altitude)"
+        self.altitudeLabel.text = "\(userLocation.altitude)"
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) in
+            
+            if (error != nil) {
+                
+                print(error)
+                
+                
+            } else {
+                
+                if let p = CLPlacemark(placemark: placemarks![0] as! CLPlacemark) {
+                    
+                    print(p)
+                }
+                
+            }
+            
+            
+        })
+
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
